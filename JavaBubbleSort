@@ -1,0 +1,76 @@
+[Bubble sort in java](https://www.flowerbrackets.com/bubble-sort-java/)
+
+Bubble sort in java
+
+Bubble sort is considered as simplest sorting algorithm for the fact that given array is traversed from first to last element.
+
+Here’s the whole logic of swapping the adjacent elements.
+
+First pass
+
+(20) 70 40 10 50 30 - 20>70? no, don't swap
+20 (70) 40 10 50 30 - 70>40? yes, swap.
+20 40 (70) 10 50 30 - 70>10? yes, swap.
+20 40 10 (70) 50 30 - 70>50? yes, swap.
+20 40 10 50 (70) 30 - 70>30? yes, swap.
+20 40 10 50 30 (70)
+
+Second pass
+
+(20) 40 10 50 30 70 - 20>40? no, don't swap
+20 (40) 10 50 30 70 - 40>10? yes, swap
+20 10 (40) 50 30 70 - 40>50? no, don't swap
+20 10 40 (50) 30 70 - 50>30? yes, swap
+20 10 40 30 (50) 70 - 50>70? no, don't swap
+
+Third pass
+
+(20) 10 40 30 50 70 - 20>10? yes, swap
+10 (20) 40 30 50 70 - 20>40? no, don't swap
+10 20 (40) 30 50 70 - 40>30? yes, swap
+10 20 30 (40) 50 70 - 40>50? no, don't swap
+10 20 30 40 (50) 70 - 50>70? no, don't swap
+10 20 30 40 50 70 -   sorted array
+
+Here’s bubble sort program in java.
+
+public class DemoBubbleSort
+{
+   void bubbleSort(int[] arrNum)
+   {
+      int num = arrNum.length;
+      for(int a = 0; a < num - 1; a++)
+      {
+         for(int b = 0; b < num - a - 1; b++)
+         {
+            if(arrNum[b] > arrNum[b + 1])
+            {
+               int temp = arrNum[b];
+               arrNum[b] = arrNum[b + 1];
+               arrNum[b + 1] = temp;
+            }
+         }
+      }
+   }
+   void printingArray(int[] arrNum)
+   {
+      int number = arrNum.length;
+      for(int a = 0; a < number; ++a)
+      {
+         System.out.print(arrNum[a] + " ");
+         System.out.println();
+      }
+   }
+   public static void main(String[] args)
+   {
+      DemoBubbleSort bs = new DemoBubbleSort();
+      int[] arrSort = {65, 35, 25, 15, 23, 14, 95};
+      bs.bubbleSort(arrSort);
+      System.out.println("After sorting array: ");
+      bs.printingArray(arrSort);
+   }
+}
+
+Output:
+
+After sorting array: 14 15 23 25 35 65 95
