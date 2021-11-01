@@ -1,0 +1,58 @@
+[Insertion sort java](https://www.flowerbrackets.com/insertion-sort-java/)
+
+Insertion sort sorts elements the way in which we sort playing cards. This sort can be fast when used with smaller arrays.
+
+Insertion program
+public class InsertionSortExample
+{
+   public void sort(int[] arrNum)
+   {
+      int number = arrNum.length;
+      for(int a = 1; a < number; ++a)
+      {
+         int keyValue = arrNum[a];
+         int b = a - 1;
+         while(b >= 0 && arrNum[b] > keyValue)
+         {
+            arrNum[b + 1] = arrNum[b];
+            b = b - 1;
+         }
+         arrNum[b + 1] = keyValue;
+      }
+   }
+   static void displayArray(int[] arrNum)
+   {
+      int num = arrNum.length;
+      for(int a = 0; a < num; ++a)
+      {
+         System.out.print(arrNum[a] + " ");
+      }
+      System.out.println();
+   }
+   public static void main(String[] args)
+   {
+      int[] arrInput = { 50, 80, 10, 30, 90, 60 };
+      InsertionSortExample obj = new InsertionSortExample();
+      obj.sort(arrInput);
+      displayArray(arrInput);
+   }
+}
+
+
+Output:
+
+10 30 50 60 80 90
+
+Time complexity
+
+Insertion sort algorithm takes more time if elements in the array is in reverse order.
+
+Best time complexity: O(n) comparison and O(1) swap.
+
+Worst time complexity: O(n²) comparison and swap.
+
+Average time complexity: O(n²) comparison and swap.
+
+Space complexity: O(1) because an extra variable key is used.
+
+Auxiliary space: O(1)
