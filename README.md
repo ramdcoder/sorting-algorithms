@@ -7,3 +7,5 @@
 [Merge sort java](https://www.flowerbrackets.com/merge-sort-java/)
 
 [Quicksort in java](https://www.flowerbrackets.com/quicksort-java/)
+
+[Selection sort in java](https://www.flowerbrackets.com/selection-sort-java/)
