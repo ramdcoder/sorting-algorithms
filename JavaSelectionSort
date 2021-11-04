@@ -1,0 +1,55 @@
+[Selection sort in java](https://www.flowerbrackets.com/selection-sort-java/)
+
+Selection sort java
+
+In selection sort algorithm smallest element in unsorted array is shifted to its correct position in an array.
+
+Let’s see an example on selection sort.
+
+public class SelectionSortInJava
+{
+   void toSort(int[] arrNum)
+   {
+      int number = arrNum.length;
+      for(int a = 0; a < number - 1; a++)
+      {
+         // finding minimum element
+         int minimum = a;
+         for(int b = a + 1; b < number; b++)
+         {
+            if(arrNum[b] < arrNum[minimum])
+            {
+               minimum = b;
+            }
+         }
+         // swapping minimum element with first element
+         int temp = arrNum[minimum];
+         arrNum[minimum] = arrNum[a];
+         arrNum[a] = temp;
+      }
+   }
+   // printing array
+   void displayArray(int[] arrPrint)
+   {
+      int num = arrPrint.length;
+      for(int a = 0; a < num; ++a)
+      {
+         System.out.print(arrPrint[a] + " ");
+      }
+      System.out.println();
+   }
+   public static void main(String[] args)
+   {
+      SelectionSortInJava obj = new SelectionSortInJava();
+      int[] arrInput = {5, 4, -3, 2, -1};
+      obj.toSort(arrInput);
+      System.out.println("After sorting : ");
+      obj.displayArray(arrInput);
+   }
+}
+
+
+Output:
+
+After sorting
+-3 -1 2 4 5
