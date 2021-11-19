@@ -1,0 +1,22 @@
+Java string trim() method
+
+[Java string trim() method](https://www.flowerbrackets.com/java-string-trim-method/)
+
+String trim in java removes leading and trailing whitespaces from a string. This whitespace or space character unicode value is ‘\u0020’.
+
+public class StringTrimJava
+{
+   public static void main(String[] args)
+   {
+      String str = "     welcome to helloworld java!        ";
+      System.out.println(str);
+      System.out.println(str.trim());
+   }
+}
+
+
+Output:
+
+welcome to helloworld java!
+
+welcome to helloworld java!
